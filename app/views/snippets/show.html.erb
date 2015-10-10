@@ -17,8 +17,7 @@
 </div>
 
 <script>
-  var content = '<%= raw sanitize(j(simple_format(@snippet.body))) %>';
-  console.log(content);
+  var content = '<%= raw sanitize(j((@snippet.body))) %>';
   document.getElementById('page').innerHTML =
           marked(content);
 </script>
