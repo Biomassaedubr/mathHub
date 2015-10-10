@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= 'Untitled' if @snippet.title == '' %> <%= @snippet.title %></h1>
+    <%= link_to 'Edit', edit_snippet_path(@snippet) %>
+  </div>
+</div>
+<div class="row">
+  <!-- Snippet content -->
+  <div class="col-md-9 page" id="page">
+
+  </div>
+  <!-- Sidebar -->
+  <div class="col-md-3 sidebar">
+    Comments
+  </div>
+</div>
+
+<script>
+  var content = '<%= raw sanitize(j(simple_format(@snippet.body))) %>';
+  console.log(content);
+  document.getElementById('page').innerHTML =
+          marked(content);
+</script>

@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap
+ */
+
+$editorHeight: 77vh;
+
+html{
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  font-family: helvetica, arial, "trebuchet ms", sans-serif;
+  line-height: 1.5;
+  color: #333333;
+  height: 100%;
+}
+
+.compact{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.undecorated{
+  :focus{
+    outline:none;
+  }
+  border: 0 none;
+  outline: none;
+}
+
+.title-container {
+  margin-top: 10px;
+  border-bottom: solid #eee 1px;
+  .title {
+    width: 100%;
+    font-size: 2em;
+    color: #333;
+  }
+
+  .submit {
+    width: 100%;
+    height: 62px;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.title-label {
+  color: #666;
+  text-transform: uppercase;
+}
+
+.flat{
+  color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+}
+
+.flat:hover{
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
+}
+
+.flat:active{
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+  outline: none;
+}
+
+/* Editor styling */
+#markdown-editor{
+  #editor{
+    height: $editorHeight;
+    width: 100%;
+  }
+  #preview{
+    height: $editorHeight;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  .hidden{
+    display: none;
+  }
+}
+
+/* Show styling */
+.page{
+  padding: 20px;
+}
