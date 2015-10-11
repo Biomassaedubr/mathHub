@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-md-12">
     <h1><%= 'Untitled' if @snippet.title == '' %> <%= @snippet.title %></h1>
-    <%= link_to 'Edit', edit_snippet_path(@snippet) %>
+    <label class="compact title-label">URL</label><input value="<%= @snippet.id %>" type="text"/><%= link_to 'Edit', edit_snippet_path(@snippet) %>
   </div>
 </div>
 <div class="row">
@@ -17,7 +17,7 @@
 </div>
 
 <script>
-  var content = '<%= raw sanitize(j((@snippet.body))) %>';
+  var content = '<%= raw sanitize(j(@snippet.body)) %>';
   document.getElementById('page').innerHTML =
           marked(content);
 </script>

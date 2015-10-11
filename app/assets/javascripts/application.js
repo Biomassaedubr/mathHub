@@ -20,3 +20,13 @@
 //= require marked
 //= require ace-rails-ap
 //= require_tree .
+
+$(document).on('page:load', function(){
+    var preview = document.getElementById("preview");
+    var page = document.getElementById("page");
+
+    if(preview)
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
+    if(page)
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,"page"]);
+});
